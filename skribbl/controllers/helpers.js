@@ -5,7 +5,7 @@ const GraphemeSplitter = require('grapheme-splitter');
 
 const chance = new Chance();
 const splitter = new GraphemeSplitter();
-const words = JSON.parse(readFileSync('words.json').toString('utf-8'));
+const words = JSON.parse(readFileSync(`${__dirname}/../words.json`).toString('utf-8'));
 
 function getScore(startTime, roundtime) {
     const now = Date.now() / 1000;

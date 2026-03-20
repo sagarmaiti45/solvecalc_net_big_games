@@ -5,10 +5,13 @@ const app = express();
 const ALLOWED_ORIGINS = [
     'https://solvecalc.net',
     'https://www.solvecalc.net',
+    'https://play.mobaxo.online',
     'http://localhost',
     'http://localhost:3000',
+    'http://localhost:8080',
     'http://127.0.0.1',
     'http://127.0.0.1:3000',
+    'http://127.0.0.1:8080',
 ];
 
 // Health check endpoint (bypasses origin check)

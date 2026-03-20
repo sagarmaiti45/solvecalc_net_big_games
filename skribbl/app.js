@@ -11,6 +11,9 @@ const ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
 ];
 
+// Health check endpoint (bypasses origin check)
+app.get('/health', (req, res) => res.send('ok'));
+
 // Block all requests not coming from allowed origins
 app.use((req, res, next) => {
     const origin = req.headers.origin || '';
@@ -20,9 +23,7 @@ app.use((req, res, next) => {
         origin === o || referer.startsWith(o)
     );
 
-    // Allow direct access only if no origin/referer (e.g. Railway health check)
-    // but block obvious foreign origins
-    if (origin && !allowed) {
+    if (!allowed) {
         return res.status(403).send('Forbidden');
     }
 

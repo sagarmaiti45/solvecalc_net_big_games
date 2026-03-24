@@ -5,7 +5,7 @@ const app = express();
 const ALLOWED_ORIGINS = [
     'https://solvecalc.net',
     'https://www.solvecalc.net',
-    'https://play.mobaxo.online',
+    'https://learning.triniva.com',
     'http://localhost',
     'http://localhost:3000',
     'http://localhost:8080',
